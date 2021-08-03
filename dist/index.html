@@ -7,10 +7,40 @@
   </head>
   <body>
     <h1 class="header">Leaderboard</h1>
-    <div class="">
-      <div class="recent">
-        <h3>Recent scores</h3>
-        <a href="www.walla.co.il" class="refresh"><div>Refresh</div></a>
+    <div class="content">
+      <div class="left_side">
+        <div class="recent">
+          <h3>Recent scores</h3>
+            <button class="submit"><div>Refresh</div></button>
+        </div>
+        <table class="table table-striped">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Name</th>
+              <td >100</td>
+            </tr>
+            <tr>
+              <th scope="row">Name</th>
+              <td>200</td>
+            </tr>
+            <tr>
+              <th scope="row">Name</th>
+              <td>300</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="right_side">
+        <div class="score">
+          <h3>Add Your score</h3>
+        </div>
+        <form>
+          <input type="text" id="fname" name="fname" placeholder="Your name" class="input"><br>
+          <input type="text" id="lname" name="lname" placeholder="Your score" class="input"><br>
+          <input type="submit" class="submit align">
+        </form>
       </div>
     </div>
    <script src="bundle.js"></script>

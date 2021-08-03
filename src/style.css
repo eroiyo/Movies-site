@@ -3,18 +3,52 @@ body {
 }
 
 .header {
-  margin-left:1%;
+  margin-left: 1%;
+  margin-bottom: 2%;
 }
 
 .recent {
   display: flex;
   margin-left: 1.3%;
   align-items: center;
+  justify-content: space-between;
 }
 
-.refresh {
+table {
+  margin-left: 1.25%;
+}
+
+th {
+  width: 100px;
+}
+
+.table {
+  border: solid 2px black;
+}
+
+.left_side {
+  width: 30%;
+}
+
+.content {
+  display: flex;
+  width: 60%;
+}
+
+.right_side {
+  margin-left: 120px;
+  width: 280px;
+}
+
+.input {
+  margin-bottom: 10px;
+  border: 2px double black;
+  width: 100%;
+}
+
+.submit {
   width: 75px;
-  height: 20px;
+  height: 30px;
   border: double 2px black;
   color: black;
   text-decoration: none;
@@ -23,4 +57,10 @@ body {
   align-items: center;
   margin-left: 20px;
   font-weight: 600;
+  background-color: white;
+}
+
+.align {
+  margin-top: 15px;
+  float: right;
 }
