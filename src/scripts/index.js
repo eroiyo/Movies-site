@@ -1,22 +1,3 @@
 import '../style.css';
-import navBar from './navbar';
-import home from './home';
-import menu from './menu';
-import contact from './contact';
-import header from './header';
-import pictureDiv from './picture';
-import description from './description';
-import homeButtonPage from './homebuttonpage';
-import contactButtonPage from './contactbuttonpage';
-import menuButtonPage from './menubuttonpage';
 
-navBar();
-home();
-menu();
-contact();
-header();
-pictureDiv();
-description();
-homeButtonPage();
-contactButtonPage();
-menuButtonPage();
+
