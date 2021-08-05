@@ -10,7 +10,6 @@ body {
   background: #1abc9c !important;
   color: white;
   height: 23vh !important;
-  
 }
 
 .recent {
@@ -26,10 +25,6 @@ table {
 
 th {
   width: 100px;
-}
-
-.table {
-  border: solid 2px black;
 }
 
 .left_side {
@@ -70,6 +65,7 @@ th {
   margin-top: 15px;
   float: right;
 }
+
 .table {
   width: 100px;
   height: 100px;
@@ -77,14 +73,15 @@ th {
   position: relative;
   animation-name: example;
   animation-duration: 4s;
+  border: solid 2px black;
 }
 
-@keyframes example {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
+@keyframes example { /* stylelint-disable-line */
+  0% { background-color: red; left: 0; top: 0; } /* stylelint-disable-line */
+  25% { background-color: yellow; left: 200px; top: 0; } /* stylelint-disable-line */
+  50% { background-color: blue; left: 200px; top: 200px; } /* stylelint-disable-line */
+  75% { background-color: green; left: 0; top: 200px; } /* stylelint-disable-line */
+  100% { background-color: red; left: 0; top: 0; } /* stylelint-disable-line */
 }
 
 .animate {
@@ -93,10 +90,11 @@ th {
 
 @keyframes pulse {
   0% {
-    background-color: #001F3F;
+    background-color: #001f3f;
   }
+
   100% {
-    background-color: #FF4136;
+    background-color: #ff4136;
   }
 }
 
@@ -116,11 +114,12 @@ th {
 .card {
   background-image: url(https://media.giphy.com/media/sIIhZliB2McAo/giphy.gif);
   background-size: cover;
-  box-shadow: 0 0 140px 10px rgba(0,0,0,.5);
+  box-shadow: 0 0 140px 10px rgba(0, 0, 0, 0.5);
   position: relative;
   height: 150px;
   width: 250px;
   overflow: hidden; /* Try removing this to see how the sheen works! */
+
   --sheenX: 0; /* Set these with JavaScript */
   --sheenY: 0;
 }
@@ -132,6 +131,6 @@ th {
   right: -400px;
   bottom: -400px;
   left: -400px;
-  background: linear-gradient(217deg, rgba(255,255,255,0), rgba(255,255,255,0) 35%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,.25) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(217deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
   transform: translateX(var(--sheenX)) translateY(var(--sheenY));
 }
