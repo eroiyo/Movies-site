@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import '../style.css';
 
 const fetch = require('node-fetch');
 
-function fillTable(data) {
+const fillTable = (data) => { // the curly brace opens a multiline function
   const highestUser = document.querySelector('.highest');
   const highestScore = document.querySelector('.highest_score');
   highestUser.textContent = Object.values(data)[0][0].user;
@@ -27,7 +28,19 @@ function fillTable(data) {
   const thighestScore = document.querySelector('.thighest_score');
   thighestUser.textContent = Object.values(data)[0][5].user;
   thighestScore.textContent = Object.values(data)[0][5].score;
-}
+  const yhighestUser = document.querySelector('.yhighest');
+  const yhighestScore = document.querySelector('.yhighest_score');
+  yhighestUser.textContent = Object.values(data)[0][6].user;
+  yhighestScore.textContent = Object.values(data)[0][6].score;
+  const khighestUser = document.querySelector('.khighest');
+  const khighestScore = document.querySelector('.khighest_score');
+  khighestUser.textContent = Object.values(data)[0][7].user;
+  khighestScore.textContent = Object.values(data)[0][7].score;
+  const zhighestUser = document.querySelector('.zhighest');
+  const zhighestScore = document.querySelector('.zhighest_score');
+  zhighestUser.textContent = Object.values(data)[0][8].user;
+  zhighestScore.textContent = Object.values(data)[0][8].score;
+};
 
 fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
 
