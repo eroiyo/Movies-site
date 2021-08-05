@@ -111,4 +111,5 @@ document.querySelector('.refresh').addEventListener('click', () => {
   fetchResultsJSON().then((results) => {
     fillTable(results); // fetched movies
   });
+  document.querySelector('.refresh').className = 'animate';
 });
