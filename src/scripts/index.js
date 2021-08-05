@@ -34,13 +34,13 @@ const fillTable = (data) => { // the curly brace opens a multiline function
     yhighestUser.textContent = Object.values(data)[0][6].user;
     yhighestScore.textContent = Object.values(data)[0][6].score;
   }
-  if (Object.values(data)[0][7] !== undefined) { 
+  if (Object.values(data)[0][7] !== undefined) {
     const khighestUser = document.querySelector('.khighest');
     const khighestScore = document.querySelector('.khighest_score');
     khighestUser.textContent = Object.values(data)[0][7].user;
     khighestScore.textContent = Object.values(data)[0][7].score;
   }
-  if (Object.values(data)[0][8] !== undefined) { 
+  if (Object.values(data)[0][8] !== undefined) {
     const zhighestUser = document.querySelector('.zhighest');
     const zhighestScore = document.querySelector('.zhighest_score');
     zhighestUser.textContent = Object.values(data)[0][8].user;
@@ -55,7 +55,7 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
 
   // Adding body or contents to send
   body: JSON.stringify({
-    name: 'Erez"s coolest game this year',
+    name: 'Erez"s coolest game to date',
   }),
 
   // Adding headers to the request
@@ -72,7 +72,7 @@ document.querySelector('.align').addEventListener('click', () => {
   const guser = document.querySelector('.gname').value;
   const gscore = document.querySelector('.gscore').value;
 
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/4C6FWVQss6TsdhLqUDxm/scores', {
+  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zH4REzKr0jGOXCuqG8YJ/scores', {
 
     // Adding method type
     method: 'POST',
@@ -97,12 +97,18 @@ document.querySelector('.align').addEventListener('click', () => {
   event.preventDefault();
 });
 
-document.querySelector('.refresh').addEventListener('click', () => {
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/4C6FWVQss6TsdhLqUDxm/scores')
-    .then((response) => response.json())
-    .then((data) => fillTable(data));
+async function fetchResultsJSON() {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zH4REzKr0jGOXCuqG8YJ/scores/');
+  const results = await response.json();
+  return results;
+}
+
+fetchResultsJSON().then((results) => {
+  fillTable(results); // fetched movies
 });
 
-fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/4C6FWVQss6TsdhLqUDxm/scores/')
-  .then((response) => response.json())
-  .then((data) => fillTable(data));
+document.querySelector('.refresh').addEventListener('click', () => {
+  fetchResultsJSON().then((results) => {
+    fillTable(results); // fetched movies
+  });
+});
