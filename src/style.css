@@ -1,4 +1,44 @@
+body{
+  background-color: black;
+  color: white;
+}
+
 nav {
-  background-color: silver;
   height: 10vh;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 25%;
+  position: fixed;
+}
+
+.logo{
+  margin-left: 5%;
+  border-radius: 50%;
+  border: solid 1px white;
+  width: 50px;
+  height: 50px;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+footer {
+  background-color: silver;
+  height: 5vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;;
+  border-top: solid 2px white;
+}
+
+.created {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 10%;
+  border-top: solid 2px black;
 }
