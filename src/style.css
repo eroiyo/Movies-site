@@ -1,23 +1,28 @@
 body {
   background-color: black;
   color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 nav {
-  height: 10vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 25%;
-  position: fixed;
+}
+
+header{
+  height: 10%;
 }
 
 .logo {
   margin-left: 5%;
   border-radius: 50%;
   border: solid 1px white;
-  width: 50px;
-  height: 50px;
+  width: 5.5%;
+  height: 100%;
 }
 
 li {
@@ -26,19 +31,18 @@ li {
 }
 
 footer {
-  background-color: silver;
-  height: 5vh;
-  position: fixed;
+  background-color: black;
+  height: 18.75%;
   left: 0;
   bottom: 0;
   width: 100%;
-  border-top: solid 2px white;
+  border: solid 2px white;
+  display: flex;
+  align-items: center;
 }
 
-.created {
-  position: fixed;
+main{
   width: 100%;
-  left: 0;
-  bottom: 10%;
-  border-top: solid 2px black;
+  height: 71%;
+  background-color: red;
 }
