@@ -1,43 +1,40 @@
-const fetch = require("node-fetch");
-
-// GET Request.
-fetch('https://api.github.com/users/manishmshiva')
-    // Handle success
-    .then(response => response.json())  // convert to json
-    .then(json => console.log(json))    //print data to console
-    .catch(err => console.log('Request Failed', err)); // Catch errors
-
-
-
-    fetch('https://api.github.com/users/manishmshiva', {
-        method: "GET",
-        headers: {"Content-type": "application/json;charset=UTF-8"}
-      })
-      .then(response => response.json()) 
-      .then(json => console.log(json)); 
-      .catch(err => console.log(err));
-
-
-// data to be sent to the POST request
-let _data = {
-    title: "foo",
-    body: "bar", 
-    userId:1
-  }
-  
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: "POST",
-    body: JSON.stringify(_data),
-    headers: {"Content-type": "application/json; charset=UTF-8"}
-  })
-  .then(response => response.json()) 
-  .then(json => console.log(json));
-  .catch(err => console.log(err));
-      
-
-
-  document.querySelector('.submit').addEventListener('click', () => {
-  });
-  
-
-  https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/NB0kKKzDOmcMbTtoTBgl/scores
+<div class="comments_container">
+    <div>
+      <div class="movie_cover_container">
+          <img src="../src/img/frozen.png" alt="movie_cover" class="movie_cover">
+          <div><img src="../src/img/close-window.png" alt="close_window" class="close"></div>
+      </div>
+      <div class="movie_name">
+          <h2>Frozen</h2>
+      </div>
+  </div>
+  <div class="data">
+      <div class="left_data">
+          <div class="genere">Genere: Drama</div>
+          <div>Year :1984</div>
+      </div>
+      <div class="right_data">
+          <div class="genere">Genere: Drama</div>
+          <div>Year :1984</div>
+      </div>
+  </div>
+  <div class="comments_number">Comments()</div>
+  <div class="comments_content">
+      <div class="comment">
+          <div class="comment_date">03/11/2020</div>
+          <div class="commentator_name">Alex</div>
+          <div class="comment_content">Great Movie</div>
+      </div>
+      <div class="comment">
+          <div class="comment_date">03/11/2020</div>
+          <div class="commentator_name">Mia</div>
+          <div class="comment_content">I love it</div>
+      </div>
+  </div>
+  <div class="comments_number">Add a comment</div>
+  <form class="add_comment" id="add_comment">
+      <input type="text" placeholder="Your name" class="your_name">
+      <textarea name="comment">Your insights</textarea>
+      <input type="submit" value="Comment">
+  </form>
+</div>
