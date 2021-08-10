@@ -1,10 +1,12 @@
 body {
   background-color: #292929;
   color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 nav {
-  height: 10vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -24,9 +26,8 @@ header{
   height: 50px;
 }
 
-li {
-  text-decoration: none;
-  list-style-type: none;
+.nav-element {
+  width: 10%;
 }
 
 footer {
@@ -38,16 +39,12 @@ footer {
   border-top: solid 2px white;
 }
 
-main{
+main {
   display: flex;
   width: 100%;
   height: 80%;
   background-color: #616161;
   overflow-y: scroll;
-}
-
-li {
-  width: 10%
 }
 
 .card-container {
@@ -109,7 +106,7 @@ h5 {
   margin-bottom: 0%;
 }
 
-.fa-star{
+.fa-star {
   color: yellow;
   margin-left: auto;
   margin-top: 10%;
@@ -184,18 +181,7 @@ textarea {
   margin-left: 1vw;
 }
 
-header {
-  display: none;
-}
-
 textarea::after {
   content: "\a";
   white-space: pre;
-}
-
-ul {
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-  align-items: center;
 }
