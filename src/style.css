@@ -1,28 +1,23 @@
 body {
   background-color: black;
   color: white;
-  width: 100vw;
-  height: 100vh;
 }
 
 nav {
-  height: 100%;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 25%;
-}
-
-header{
-  height: 10%;
+  position: fixed;
 }
 
 .logo {
   margin-left: 5%;
   border-radius: 50%;
   border: solid 1px white;
-  width: 5.5%;
-  height: 100%;
+  width: 50px;
+  height: 50px;
 }
 
 li {
@@ -31,17 +26,105 @@ li {
 }
 
 footer {
-  background-color: black;
-  height: 18.75%;
+  background-color: silver;
+  height: 5vh;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  border: solid 2px white;
+  border-top: solid 2px white;
+}
+
+.created {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 10%;
+  border-top: solid 2px black;
+}
+
+.movie_cover {
+  width: 80vw;
+}
+
+.movie_name {
   display: flex;
+  justify-content: center;
+}
+
+.data {
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.genere::after{
+  content: "\a\a";
+  white-space: pre;
+}
+
+.comments_number {
+  display: flex;
+  justify-content: center;
+}
+
+.comments_container {
+  width: 50vw;
+  margin-left: 25vw;
+  margin-top: 3vw;
+}
+
+.comment {
+  display: flex;
+}
+
+.comment_date,
+.commentator_name {
+  margin-right: 2%;
+}
+
+.add_comment {
+  width: 30vw;
+  margin-top: 3vw;
+  margin-bottom: 2vh;
+  margin-bottom: 10%;
+}
+
+.your_name {
+  border: solid 1px black;
+}
+
+textarea {
+  margin-top: 3%;
+  width: 80%;
+  border: solid 1px black;
+}
+
+.movie_cover_container {
+  display: flex;
+}
+
+.close {
+  width: 7vw;
+  margin-left: 1vw;
+}
+
+header {
+  display: none;
+}
+
+textarea::after{
+  content: "\a";
+  white-space: pre;
+}
+
+ul {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
   align-items: center;
 }
 
-main{
-  width: 100%;
-  height: 71%;
+.created {
+  display: none;
 }
