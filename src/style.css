@@ -1,15 +1,21 @@
 body {
-  background-color: black;
+  background-color: #292929;
   color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 nav {
-  height: 10vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 25%;
-  position: fixed;
+}
+
+header {
+  height: 10%;
+  display: flex;
 }
 
 .logo {
@@ -20,28 +26,92 @@ nav {
   height: 50px;
 }
 
-li {
-  text-decoration: none;
-  list-style-type: none;
+.nav-element {
+  width: 10%;
 }
 
 footer {
-  background-color: silver;
-  height: 5vh;
-  position: fixed;
+  background-color: #292929;
+  height: 10%;
   left: 0;
   bottom: 0;
   width: 100%;
   border-top: solid 2px white;
 }
 
-.created {
-  position: fixed;
+main {
+  display: flex;
   width: 100%;
-  left: 0;
-  bottom: 10%;
-  border-top: solid 2px black;
-  display: none;
+  height: 80%;
+  background-color: #616161;
+  overflow-y: scroll;
+}
+
+.card-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5%;
+  display: grid;
+  width: 90%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 5%;
+  margin-bottom: 2.5%;
+}
+
+.card-image {
+  width: 100%;
+  height: 50%;
+}
+
+.card {
+  background-color: #292929;
+  width: 15vw;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
+  height: 5%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.like-genre-container {
+  width: 100%;
+  height: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button {
+  background-color: #ee2935;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 75%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+.card-button {
+  height: 25%;
+  width: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.fa-star {
+  color: yellow;
+  margin-left: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  margin-right: auto;
 }
 
 .movie_cover {
@@ -111,39 +181,7 @@ textarea {
   margin-left: 1vw;
 }
 
-header {
-  display: none;
-}
-
 textarea::after {
   content: "\a";
   white-space: pre;
-}
-
-ul {
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  color: black;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
-
-.movie_picture {
-  width: 15%;
 }
