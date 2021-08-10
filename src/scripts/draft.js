@@ -1,7 +1,3 @@
-/* eslint-disable no-console */
-import '../style.css';
-
-// eslint-disable-next-line no-unused-vars
 const fetch = require('node-fetch');
 
 async function fetchResultsJSON() {
@@ -14,3 +10,4 @@ async function fetchResultsJSON() {
     console.log(results); // fetched movies
   });
   
+
