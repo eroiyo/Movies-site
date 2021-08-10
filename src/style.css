@@ -41,6 +41,7 @@ footer {
   left: 0;
   bottom: 10%;
   border-top: solid 2px black;
+  display: none;
 }
 
 .movie_cover {
@@ -58,7 +59,7 @@ footer {
   justify-content: space-between;
 }
 
-.genere::after{
+.genere::after {
   content: "\a\a";
   white-space: pre;
 }
@@ -111,10 +112,10 @@ textarea {
 }
 
 header {
-  /* display: none; */
+  display: none;
 }
 
-textarea::after{
+textarea::after {
   content: "\a";
   white-space: pre;
 }
@@ -124,13 +125,4 @@ ul {
   width: 40%;
   justify-content: space-between;
   align-items: center;
-}
-
-.created {
-  /* display: none; */
-}
-
-textarea::after{
-  content: "\a";
-  white-space: pre;
 }
