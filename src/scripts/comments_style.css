@@ -1,0 +1,67 @@
+.movie_cover {
+    width: 60vw;
+    margin-left: 20vw;
+}
+
+.movie_name {
+    display: flex;
+    justify-content: center;
+}
+
+.data {
+    width: 50vw;
+    margin-left: 22vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.genere::after{
+    content: "\a\a";
+    white-space: pre;
+}
+
+.comments_number {
+    display: flex;
+    justify-content: center;
+}
+
+.comments_container {
+    width: 40vw;
+    margin-left: 22vw;
+    margin-top: 3vw;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment_date,
+.commentator_name {
+    margin-right: 2%;
+}
+
+.add_comment {
+    width: 30vw;
+    margin-left: 22vw;
+    margin-top: 3vw;
+    margin-bottom: 2vh;
+}
+
+.your_name {
+    border: solid 1px black;
+}
+
+textarea {
+    margin-top: 3%;
+    width: 80%;
+    border: solid 1px black;
+}
+
+.movie_cover_container {
+    display: flex;
+}
+
+.close {
+    width: 7vw;
+    margin-left: 1vw;
+}
