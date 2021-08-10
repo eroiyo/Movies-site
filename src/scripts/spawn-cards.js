@@ -35,8 +35,7 @@ export const spawnCard = (movie, target) => {
   target.appendChild(card);
 };
 export const spawnCards = (array, target) => {
-  array.forEach(movie => {
+  array.forEach((movie) => {
     spawnCard(movie, target);
   });
 };
-
