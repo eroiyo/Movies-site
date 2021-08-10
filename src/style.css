@@ -53,7 +53,7 @@ footer {
 }
 
 .data {
-  width: 45vw;
+  width: 42vw;
   display: flex;
   justify-content: space-between;
 }
@@ -72,6 +72,7 @@ footer {
   width: 50vw;
   margin-left: 25vw;
   margin-top: 3vw;
+  display: none;
 }
 
 .comment {
@@ -110,7 +111,7 @@ textarea {
 }
 
 header {
-  display: none;
+  /* display: none; */
 }
 
 textarea::after{
@@ -126,5 +127,10 @@ ul {
 }
 
 .created {
-  display: none;
+  /* display: none; */
+}
+
+textarea::after{
+  content: "\a";
+  white-space: pre;
 }
