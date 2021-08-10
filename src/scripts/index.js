@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import { result } from 'lodash';
 import '../style.css';
 import { spawnCards } from './spawn-cards';
 
-const target = document.querySelector('.card-container')
+const target = document.querySelector('.card-container');
 
 // eslint-disable-next-line no-unused-vars
 const fetch = require('node-fetch');
