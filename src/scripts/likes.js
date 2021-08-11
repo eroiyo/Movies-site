@@ -6,7 +6,7 @@ const getLikes = async () => fetch('https://us-central1-involvement-api.cloudfun
     },
   })
     .then((response) => response.json())
-    .then((json) => (json);
+    .then((json) => (json),
   );
 
 export const updateLikes = async () => {
