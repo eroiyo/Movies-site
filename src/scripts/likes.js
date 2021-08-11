@@ -6,15 +6,15 @@ const getLikes = async () => fetch('https://us-central1-involvement-api.cloudfun
   },
 })
   .then((response) => response.json())
-  .then((json) => (json),);
+  .then((json) => (json));
 
 export const updateLikes = async () => {
   const array = await getLikes();
   array.forEach((likes) => {
     const target = document.getElementById(`like-${likes.item_id}`);
-    target.textContent = `Likes: ${likes.likes}`
+    target.textContent = `Likes: ${likes.likes}`;
   });
-}
+};
 
 export const postLike = async (id) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/likes', {
@@ -28,5 +28,5 @@ export const postLike = async (id) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
-  .then((response) => response.json());
-}
+    .then((response) => response.json());
+};
