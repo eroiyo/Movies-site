@@ -19,10 +19,19 @@ export const spawnCard = (movie, target) => {
   star.classList.add('fa');
   star.classList.add('fa-star');
 
-  const commentButton = document.createElement('input');
-  commentButton.value = 'Comments';
+  const commentButton = document.createElement('button');
+  commentButton.textContent = 'Comments';
   commentButton.classList.add('button');
   commentButton.classList.add('card-button');
+
+  commentButton.addEventListener('click', () => {
+    document.querySelector('.card-container').style.display = 'none';
+    document.querySelector('.mname').textContent = cardTitle.textContent;
+    document.querySelector('.movie_cover').src = image.src;
+    document.querySelector('.summary_text').innerHTML = movie.show.summary;
+    document.querySelector('.comments_container').style.display = 'block';
+    document.querySelector('main').style.height = '30%';
+  });
 
   likeContainer.appendChild(likes);
   likeContainer.appendChild(star);
@@ -34,6 +43,7 @@ export const spawnCard = (movie, target) => {
 
   target.appendChild(card);
 };
+
 export const spawnCards = (array, target) => {
   array.forEach((movie) => {
     spawnCard(movie, target);
