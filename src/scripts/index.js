@@ -49,7 +49,6 @@ document.querySelector('.submit_button').addEventListener('click', () => {
   const itemId = document.querySelector('.mname').textContent;
   const userName = document.querySelector('.your_name').value;
   const commentContent = document.querySelector('textarea').value;
-
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments', {
 
     // Adding method type
@@ -71,4 +70,8 @@ document.querySelector('.submit_button').addEventListener('click', () => {
     .then((response) => response.json())
   // eslint-disable-next-line no-console
     .then((json) => console.log(json));
+    document.querySelector('.your_name').value = '';
+    document.querySelector('textarea').value = '';
+    alert('2200');
+    event.preventDefault();
 });
