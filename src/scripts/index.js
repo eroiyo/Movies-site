@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import '../style.css';
-import { spawnCards } from './spawn-cards';
+import { spawnCards, valueUpdater } from './spawn-cards';
 import { updateLikes } from './likes';
 
 const target = document.querySelector('.card-container');
+const comedy = document.querySelector('.comedy');
 
 // eslint-disable-next-line no-unused-vars
 const fetch = require('node-fetch');
@@ -31,7 +32,8 @@ async function fetchResultsJSON() {
 fetchResultsJSON().then((results) => {
   console.log(results); // fetched movies
   results.splice(8, 1);
-  spawnCards(results, target);
+  const total = spawnCards(results, target);
+  valueUpdater(comedy, total);
   updateLikes();
 });
 
