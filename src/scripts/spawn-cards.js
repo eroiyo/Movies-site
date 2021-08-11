@@ -1,6 +1,6 @@
 import { postLike } from './likes';
 
-export const spawnCard = (movie, target) => {
+const spawnCard = (movie, target) => {
   const card = document.createElement('div');
   card.classList.add('card');
 
@@ -58,7 +58,14 @@ export const spawnCard = (movie, target) => {
 };
 
 export const spawnCards = (array, target) => {
+  let items = 0;
   array.forEach((movie) => {
+    items +=1;
     spawnCard(movie, target);
   });
+  return items;
 };
+
+export const valueUpdater = (element, number) => {
+  element.value = `${element.value} (${number})`;
+}
