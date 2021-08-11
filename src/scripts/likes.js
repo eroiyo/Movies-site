@@ -1,16 +1,13 @@
-const getLikes = async () => {
-  return fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/likes', {
+const getLikes = async () => fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/likes', {
     method: 'GET',
     // Adding headers to the request
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
-  .then((response) => response.json())
-  .then((json) => {
-      return (json);
-  });
-}
+    .then((response) => response.json())
+    .then((json) => (json);
+  );
 
 export const updateLikes = async () => {
   const array = await getLikes();
@@ -19,7 +16,6 @@ export const updateLikes = async () => {
     target.textContent = `Likes: ${likes.likes}`
   });
 }
-
 
 export const postLike = async (id) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/likes', {

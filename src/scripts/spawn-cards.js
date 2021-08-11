@@ -16,25 +16,25 @@ export const spawnCard = (movie, target) => {
 
   const likes = document.createElement('h6');
   likes.textContent = '';
-  likes.id =`like-${movie.show.name}`;
+  likes.id = `like-${movie.show.name}`;
 
   const star = document.createElement('i');
   star.classList.add('fa');
   star.classList.add('fa-star');
-  star.addEventListener('click', ()=> {
+  star.addEventListener('click', () => {
     let temp = likes.textContent.split(' ');
-    temp = parseInt(temp[1]);
+    temp = parseInt(temp[1], 10);
     temp += 1;
     likes.textContent = `Likes: ${temp}`;
 
     postLike(movie.show.name);
-  })
+  });
 
   const commentButton = document.createElement('button');
   commentButton.textContent = 'Comments';
   commentButton.classList.add('button');
   commentButton.classList.add('card-button');
-  commentButton.type ="button"
+  commentButton.type = 'button';
   commentButton.readOnly = true;
 
   commentButton.addEventListener('click', () => {
