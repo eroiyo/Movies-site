@@ -77,7 +77,8 @@ const spawnCard = (movie, target) => {
     document.querySelector('.movie_cover').src = image.src;
     document.querySelector('.summary_text').innerHTML = movie.show.summary;
     document.querySelector('.comments_container').style.display = 'block';
-    document.querySelector('main').style.height = '30%';
+    document.querySelector('.card').style.display = 'block';
+    document.querySelector('main').style.display = 'none';
     const itemId = cardTitle.textContent;
     fetchComments(itemId);
   });

@@ -38,15 +38,17 @@ fetchResultsJSON().then((results) => {
 });
 
 document.querySelector('.close').addEventListener('click', () => {
+  document.querySelector('.card-container').style.display = 'flex';
   document.querySelector('.comments_container').style.display = 'none';
   document.querySelector('.card-container').style.display = 'grid';
-  document.querySelector('main').style.height = '80%';
+  document.querySelector('main').style.display = 'flex';
 });
 
 document.querySelector('.close').addEventListener('click', () => {
+  document.querySelector('.card-container').style.display = 'flex';
   document.querySelector('.comments_container').style.display = 'none';
   document.querySelector('.card-container').style.display = 'grid';
-  document.querySelector('main').style.height = '80%';
+  document.querySelector('main').style.display = 'flex';
 });
 
 
