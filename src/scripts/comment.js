@@ -1,23 +1,12 @@
 const fetch = require('node-fetch');
 
-fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments', {
-
-  // Adding method type
-  method: 'POST',
-
-  // Adding body or contents to send
-  body: JSON.stringify({
-    item_id: 'Inside Comedy',
-    username: 'erez',
-    comment: 'Great fun',
-  }),
-
-  // Adding headers to the request
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-
-  .then((response) => response.json())
-  // eslint-disable-next-line no-console
-  .then((json) => console.log(json));
+async function fetchResultsJSON() {
+    const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments?item_id=Inside%20Comedy');
+    const results = await response.json();
+    return results;
+  }
+  
+  fetchResultsJSON().then((results) => {
+    console.log(results); // fetched movies
+    results.splice(8, 1);
+  });

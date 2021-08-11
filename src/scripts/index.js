@@ -45,6 +45,8 @@ document.querySelector('.close').addEventListener('click', () => {
   document.querySelector('main').style.height = '80%';
 });
 
+
+
 document.querySelector('.submit_button').addEventListener('click', () => {
   const itemId = document.querySelector('.mname').textContent;
   const userName = document.querySelector('.your_name').value;
@@ -72,6 +74,7 @@ document.querySelector('.submit_button').addEventListener('click', () => {
     .then((json) => console.log(json));
     document.querySelector('.your_name').value = '';
     document.querySelector('textarea').value = '';
-    alert('2200');
     event.preventDefault();
 });
+
+

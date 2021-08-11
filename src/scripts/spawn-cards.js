@@ -91,11 +91,3 @@ export const spawnCards = (array, target) => {
     spawnCard(movie, target);
   });
 };
-
-
-
-'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments?item_id=Comedy%20Legends
-
-
-
-Comedy Legends
