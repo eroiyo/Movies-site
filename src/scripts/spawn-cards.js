@@ -13,6 +13,7 @@ export const spawnCard = (movie, target) => {
     fetchResultsJSON().then((results) => { // fetched movies
       const commentsContent = document.querySelector('.comments_content');
       while (commentsContent.firstChild) commentsContent.removeChild(commentsContent.firstChild);
+      document.querySelector('.comments_number').textContent = `comments (${results.length})`;
       for (let i = 0; i < results.length; i += 1) {
         const commentDiv = document.createElement('div');
         commentDiv.style.display = 'flex';
