@@ -31,12 +31,14 @@ header {
 }
 
 footer {
+  display: flex;
   background-color: #292929;
-  height: 10%;
+  height: 11%;
   left: 0;
   bottom: 0;
   width: 100%;
   border-top: solid 2px white;
+  align-items: center;
 }
 
 main {
@@ -73,10 +75,20 @@ main {
   margin-right: auto;
 }
 
+h3{
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
 h5 {
   height: 5%;
   text-align: center;
   font-size: 14px;
+}
+
+h6 {
+  padding-top: 5%;
 }
 
 .like-genre-container {
@@ -112,6 +124,7 @@ h5 {
   margin-top: 10%;
   margin-bottom: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .movie_cover {
