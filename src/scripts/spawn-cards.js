@@ -24,7 +24,7 @@ export const spawnCard = (movie, target) => {
   commentButton.classList.add('button');
   commentButton.classList.add('card-button');
 
-  commentButton.addEventListener("click", function() {
+  commentButton.addEventListener('click', () => {
     document.querySelector('.card-container').style.display = 'none';
     document.querySelector('.mname').textContent = cardTitle.textContent;
     document.querySelector('.movie_cover').src = image.src;
@@ -43,7 +43,6 @@ export const spawnCard = (movie, target) => {
 
   target.appendChild(card);
 };
-
 
 export const spawnCards = (array, target) => {
   array.forEach((movie) => {

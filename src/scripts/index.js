@@ -33,7 +33,7 @@ fetchResultsJSON().then((results) => {
   spawnCards(results, target);
 });
 
-document.querySelector(".close").addEventListener("click", function() {
+document.querySelector('.close').addEventListener('click', () => {
   document.querySelector('.comments_container').style.display = 'none';
   document.querySelector('.card-container').style.display = 'grid';
   document.querySelector('main').style.height = '80%';
