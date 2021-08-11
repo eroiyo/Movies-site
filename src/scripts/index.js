@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import '../style.css';
 import { spawnCards } from './spawn-cards';
+import { updateLikes } from './likes';
 
 const target = document.querySelector('.card-container');
 
@@ -31,6 +32,7 @@ fetchResultsJSON().then((results) => {
   console.log(results); // fetched movies
   results.splice(8, 1);
   spawnCards(results, target);
+  updateLikes();
 });
 
 document.querySelector('.close').addEventListener('click', () => {
