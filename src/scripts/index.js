@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import '../style.css';
-import { update } from 'lodash';
 import { updateLikes } from './likes';
 
 import { fetchfromAPI } from './fetch';
