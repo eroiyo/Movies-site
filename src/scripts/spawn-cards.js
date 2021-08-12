@@ -4,7 +4,7 @@ const spawnCard = (movie, target) => {
   const fetchComments = (itemId) => { // the curly brace opens a multiline function
     async function fetchResultsJSON() {
       itemId = itemId.replace(/\s/g, '%20');
-      const api = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments?item_id=' + itemId
+      const api = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments?item_id=${itemId}`;
       const response = await fetch(api);
       const results = await response.json();
       return results;
@@ -13,11 +13,15 @@ const spawnCard = (movie, target) => {
     fetchResultsJSON().then((results) => { // fetched movies
       const commentsContent = document.querySelector('.comments_content');
       while (commentsContent.firstChild) commentsContent.removeChild(commentsContent.firstChild);
-      document.querySelector('.comments_number').textContent = `comments (${results.length})`;
+      if (results.length > 0) {
+        document.querySelector('.comments_number').textContent = `comments (${results.length})`;
+      } else {
+        document.querySelector('.comments_number').textContent = 'comments (0)';
+      }
       for (let i = 0; i < results.length; i += 1) {
         const commentDiv = document.createElement('div');
         commentDiv.style.display = 'flex';
-        const username = results[i].username;
+        const { username } = results[i];
         const date = results[i].creation_date;
         const content = results[i].comment;
         const userNameDiv = document.createElement('div');
@@ -97,7 +101,7 @@ const spawnCard = (movie, target) => {
 export const spawnCards = (array, target) => {
   let items = 0;
   array.forEach((movie) => {
-    items +=1;
+    items += 1;
     spawnCard(movie, target);
   });
   return items;
@@ -105,4 +109,4 @@ export const spawnCards = (array, target) => {
 
 export const valueUpdater = (element, number) => {
   element.value = `${element.value} (${number})`;
-}
+};
