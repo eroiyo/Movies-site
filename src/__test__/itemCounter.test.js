@@ -22,6 +22,6 @@ const section = document.querySelector('.comedy');
 test('the numbers of elements in the container should be the same as the outpout of the function', () => {
   const testing = [{ show: { image: { medium: 'example' }, name: 'example', summary: 'example' } }];
   const number = spawnCards.spawnCards(testing, target);
-  spawnCards.valueUpdater(section, number)
+  spawnCards.valueUpdater(section, number);
   expect(section.value).toBe('Comedy (1)');
 });
