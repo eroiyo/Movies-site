@@ -1,15 +1,18 @@
 # Movies-site
 
-The is capstone project app.
+####  The is capstone project app.
 
+The app retrieves shows information from the external API
 
-This app will allow the user to
--To add his score to the Leader_Board.
--Will get Live scores from the Leader_Board Api.
-[Api Documentation](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
+https://api.tvmaze.com 
 
+likes and comments are then being posted to an involvement API
 
-#### The app demonstrates the use of NPM, Webpack, and Javascript and ,Javascript Api
+https://us-central1-involvement-api.cloudfunctions.net/capstoneApi (for which we have created a dedicated app)
+
+lastly likes and comments are being fetched back to the client from the involvement API
+
+#### The app demonstrates the use of NPM, Webpack, and Javascript and, Javascript API
 
 ## Built with
 
@@ -25,11 +28,11 @@ This app will allow the user to
 
 To run the project on your local machine, please run the following commands on your terminal:
 
-> 1. run `git clone https://github.com/erezfree29/Leader_board/`
-> 2. run `cd Leader_board`
+> 1. run `git clone https://github.com/erezfree29/Movies-site/`
+> 2. run `cd Movies-site`
 > 3. Open the index.html file with your browser
 
-if you wish to edit the code for the project to take affect 
+if you wish to edit the code for the project to take effect.
 
 > 1.install nodeJs on your local machine 
 [NodeJs Installation](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04)
@@ -38,6 +41,13 @@ if you wish to edit the code for the project to take affect
 [Webpack Installation](https://webpack.js.org/guides/installation/)
 
 > 3.run npm run watch and make live changes
+
+### Testing
+
+- use of jtest to install please see
+
+[Jtest Installation](https://www.howtoinstall.me/ubuntu/18-04/jstest-gtk/)
+
 
 ## Author
 
@@ -48,11 +58,18 @@ if you wish to edit the code for the project to take affect
 [<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/erez-friemagor/?originalSubdomain=uk)
 <a href="mailto:erezfree29@gmail.com?subject=Hey Erez!"><img height="26" src="https://cdn.worldvectorlogo.com/logos/official-gmail-icon-2020-.svg"></a>
 
+
+👤 Arturo Ortega
+
+Protfolio: [Check it out](https://eroiyo.github.io/My-Portafolio/)
+GitHub: [Check it out](https://github.com/eroiyo)
+LinkedIn: [Check it out](https://www.linkedin.com/in/carlos-arturo-ortega-guanipa-39a1a5204/)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues](https://github.com/erezfree29/Leader_board/issues)
+Feel free to check the [issues](https://github.com/erezfree29/Movies-site/issues)
 
 ## Show your support
 
