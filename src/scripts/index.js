@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 import '../style.css';
+import { updateLikes } from './likes';
 
-
-import  {fetchfromAPI} from '../scripts/fetch'
+import { fetchfromAPI } from './fetch';
 
 const target = document.querySelector('.card-container');
 const targetTwo = document.querySelector('.card-container-two');
 const comedy = document.querySelector('.comedy');
-const drama = document.querySelector('.tv');
+const drama = document.querySelector('.drama');
 
 // eslint-disable-next-line no-unused-vars
 const fetch = require('node-fetch');
@@ -15,22 +15,13 @@ const fetch = require('node-fetch');
 let page = 'Comedy';
 // eslint-disable-next-line no-unused-vars
 
-fetchfromAPI(target, comedy)
+const init = async () => {
+  await fetchfromAPI(target, comedy, 'https://api.tvmaze.com/search/shows?q=comedy#', 9, 1);
+  await fetchfromAPI(targetTwo, drama, 'https://api.tvmaze.com/search/shows?q=drama#', 8, 1);
+  await updateLikes();
+};
 
-
-async function fetchDramResultsJSON() {
-  const response = await fetch('https://api.tvmaze.com/search/shows?q=drama#');
-  const results = await response.json();
-  return results;
-}
-
-fetchDramResultsJSON().then((results) => {
-  console.log(results); // fetched movies
-  results.splice(8, 1);
-  const total = spawnCards(results, targetTwo);
-  valueUpdater(drama, total);
-  updateLikes();
-});
+init();
 
 document.querySelector('.close').addEventListener('click', () => {
   if (page === 'Comedy') {
