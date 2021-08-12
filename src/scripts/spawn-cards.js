@@ -53,10 +53,10 @@ const spawnCard = (movie, target) => {
 
   const image = document.createElement('img');
   image.classList.add('card-image');
-  if(movie.show.image !==null){
+  if (movie.show.image !== null) {
     image.src = movie.show.image.medium;
   } else {
-    image.src = '../src/img/404.jpg'
+    image.src = '../src/img/404.jpg';
   }
 
   const cardTitle = document.createElement('h5');

@@ -11,10 +11,10 @@ const getLikes = async () => fetch('https://us-central1-involvement-api.cloudfun
 export const updateLikes = async () => {
   const array = await getLikes();
   array.forEach((likes) => {
-    console.log(likes)
+    console.log(likes);
     const target = document.getElementById(`like-${likes.item_id}`);
     console.log(target);
-    if(target !== null){
+    if (target !== null) {
       target.textContent = `Likes: ${likes.likes}`;
     }
   });

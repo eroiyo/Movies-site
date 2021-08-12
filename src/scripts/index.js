@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 import '../style.css';
+import { update } from 'lodash';
 import { updateLikes } from './likes';
 
-
-import  {fetchfromAPI} from '../scripts/fetch'
-import { update } from 'lodash';
+import { fetchfromAPI } from './fetch';
 
 const target = document.querySelector('.card-container');
 const targetTwo = document.querySelector('.card-container-two');
@@ -16,12 +15,11 @@ const fetch = require('node-fetch');
 
 // eslint-disable-next-line no-unused-vars
 
-const init = async () =>{
-
-await fetchfromAPI(target, comedy, 'https://api.tvmaze.com/search/shows?q=comedy#', 9,1);
-await fetchfromAPI(targetTwo, drama, 'https://api.tvmaze.com/search/shows?q=drama#', 8,1);
-await updateLikes();
-}
+const init = async () => {
+  await fetchfromAPI(target, comedy, 'https://api.tvmaze.com/search/shows?q=comedy#', 9, 1);
+  await fetchfromAPI(targetTwo, drama, 'https://api.tvmaze.com/search/shows?q=drama#', 8, 1);
+  await updateLikes();
+};
 
 init();
 
