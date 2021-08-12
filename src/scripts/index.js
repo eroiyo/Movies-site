@@ -51,8 +51,6 @@ document.querySelector('.close').addEventListener('click', () => {
   document.querySelector('main').style.display = 'flex';
 });
 
-
-
 document.querySelector('.submit_button').addEventListener('click', () => {
   const itemId = document.querySelector('.mname').textContent;
   const userName = document.querySelector('.your_name').value;
@@ -78,9 +76,8 @@ document.querySelector('.submit_button').addEventListener('click', () => {
     .then((response) => response.json())
   // eslint-disable-next-line no-console
     .then((json) => console.log(json));
-    document.querySelector('.your_name').value = '';
-    document.querySelector('textarea').value = '';
-    event.preventDefault();
+  document.querySelector('.your_name').value = '';
+  document.querySelector('textarea').value = '';
+  // eslint-disable-next-line no-restricted-globals
+  event.preventDefault();
 });
-
-
