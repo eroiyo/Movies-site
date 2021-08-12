@@ -11,31 +11,40 @@ const spawnCard = (movie, target) => {
     }
 
     fetchResultsJSON().then((results) => { // fetched movies
-      const commentsContent = document.querySelector('.comments_content');
-      while (commentsContent.firstChild) commentsContent.removeChild(commentsContent.firstChild);
+      const table = document.querySelector('.comments_table');
+      while (table.firstChild) table.removeChild(table.firstChild);
       if (results.length > 0) {
-        document.querySelector('.comments_number').textContent = `comments (${results.length})`;
+        document.querySelector('.comments_number').textContent = `Comments (${results.length})`;
       } else {
-        document.querySelector('.comments_number').textContent = 'comments (0)';
+        document.querySelector('.comments_number').textContent = 'Comments (0)';
       }
+      const tr = document.createElement('tr');
+      const thName = document.createElement('th');
+      const thTime = document.createElement('th');
+      const thComment = document.createElement('th');
+      thName.textContent = 'usernamne';
+      thTime.textContent = 'time';
+      thComment.textContent = 'comment';
+      tr.appendChild(thName);
+      tr.appendChild(thTime);
+      tr.appendChild(thComment);
+      table.appendChild(tr);
+      document.querySelector('.comments_number').style.fontSize = 'x-large';
       for (let i = 0; i < results.length; i += 1) {
-        const commentDiv = document.createElement('div');
-        commentDiv.style.display = 'flex';
+        const tr = document.createElement('tr');
         const { username } = results[i];
         const date = results[i].creation_date;
         const content = results[i].comment;
-        const userNameDiv = document.createElement('div');
-        userNameDiv.style.marginRight = '60px';
-        const dateDiv = document.createElement('div');
-        dateDiv.style.marginRight = '60px';
-        const contentDiv = document.createElement('div');
+        const userNameDiv = document.createElement('td');
+        const dateDiv = document.createElement('td');
+        const contentDiv = document.createElement('td');
         userNameDiv.textContent = username;
         dateDiv.textContent = date;
         contentDiv.textContent = content;
-        commentDiv.appendChild(userNameDiv);
-        commentDiv.appendChild(dateDiv);
-        commentDiv.appendChild(contentDiv);
-        commentsContent.appendChild(commentDiv);
+        tr.appendChild(userNameDiv);
+        tr.appendChild(dateDiv);
+        tr.appendChild(contentDiv);
+        table.appendChild(tr);
       }
     });
   };

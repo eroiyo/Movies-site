@@ -1,10 +1,13 @@
 /* eslint-disable no-console */
 import '../style.css';
 import { spawnCards, valueUpdater } from './spawn-cards';
+
 import { updateLikes } from './likes';
 
 const target = document.querySelector('.card-container');
+const targetTwo = document.querySelector('.card-container-two');
 const comedy = document.querySelector('.comedy');
+const drama = document.querySelector('.tv');
 
 // eslint-disable-next-line no-unused-vars
 const fetch = require('node-fetch');
@@ -37,11 +40,18 @@ fetchResultsJSON().then((results) => {
   updateLikes();
 });
 
-document.querySelector('.close').addEventListener('click', () => {
-  document.querySelector('.card-container').style.display = 'flex';
-  document.querySelector('.comments_container').style.display = 'none';
-  document.querySelector('.card-container').style.display = 'grid';
-  document.querySelector('main').style.display = 'flex';
+async function fetchDramResultsJSON() {
+  const response = await fetch('https://api.tvmaze.com/search/shows?q=drama#');
+  const results = await response.json();
+  return results;
+}
+
+fetchDramResultsJSON().then((results) => {
+  console.log(results); // fetched movies
+  results.splice(8, 1);
+  const total = spawnCards(results, targetTwo);
+  valueUpdater(drama, total);
+  updateLikes();
 });
 
 document.querySelector('.close').addEventListener('click', () => {
@@ -80,4 +90,18 @@ document.querySelector('.submit_button').addEventListener('click', () => {
   document.querySelector('textarea').value = '';
   // eslint-disable-next-line no-restricted-globals
   event.preventDefault();
+});
+
+document.querySelector('.comedy').addEventListener('click', () => {
+  document.querySelector('.comments_container').style.display = 'none';
+  document.querySelector('.card-container-two').style.display = 'none';
+  document.querySelector('.card-container').style.display = 'grid';
+  document.querySelector('main').style.display = 'flex';
+});
+
+document.querySelector('.drama').addEventListener('click', () => {
+  document.querySelector('.comments_container').style.display = 'none';
+  document.querySelector('.card-container').style.display = 'none';
+  document.querySelector('.card-container-two').style.display = 'grid';
+  document.querySelector('main').style.display = 'flex';
 });
