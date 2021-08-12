@@ -1,24 +1,19 @@
-
 import { spawnCards, valueUpdater } from './spawn-cards';
-import { updateLikes } from './likes';
 
+export const fetchResultsJSON = async (url) => {
+  const response = await fetch(url);
+  const results = await response.json();
+  return results;
+};
 
-export const fetchResultsJSON = async () => {
-    const response = await fetch('https://api.tvmaze.com/search/shows?q=comedy#');
-    const results = await response.json();
-    return results;
-  }
-
-export const fetchfromAPI = async (target, section) => {
-  
-  fetchResultsJSON().then((results) => {
+export const fetchfromAPI = async (target, section, url, from, many) => {
+  fetchResultsJSON(url).then((results) => {
     console.log(results); // fetched movies
-    results.splice(9, 1);
+    results.splice(from, many);
     const total = spawnCards(results, target);
     valueUpdater(section, total);
-    updateLikes();
   });
-}
+};
 
 export const Appcreation = () => {
   const request = new XMLHttpRequest();
@@ -27,7 +22,7 @@ export const Appcreation = () => {
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 201) {
-        console.log(request.responseText);
+      console.log(request.responseText);
     }
   };
   request.send();
