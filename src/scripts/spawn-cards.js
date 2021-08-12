@@ -53,7 +53,11 @@ const spawnCard = (movie, target) => {
 
   const image = document.createElement('img');
   image.classList.add('card-image');
-  image.src = movie.show.image.medium;
+  if(movie.show.image !==null){
+    image.src = movie.show.image.medium;
+  } else {
+    image.src = '../src/img/404.jpg'
+  }
 
   const cardTitle = document.createElement('h5');
   cardTitle.textContent = movie.show.name;
@@ -62,7 +66,7 @@ const spawnCard = (movie, target) => {
   likeContainer.classList.add('like-genre-container');
 
   const likes = document.createElement('h6');
-  likes.textContent = '';
+  likes.textContent = 'Likes: 0';
   likes.id = `like-${movie.show.name}`;
 
   const star = document.createElement('i');

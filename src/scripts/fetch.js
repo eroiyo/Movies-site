@@ -1,22 +1,18 @@
 
 import { spawnCards, valueUpdater } from './spawn-cards';
-import { updateLikes } from './likes';
-
-
-export const fetchResultsJSON = async () => {
-    const response = await fetch('https://api.tvmaze.com/search/shows?q=comedy#');
+export const fetchResultsJSON = async (url) => {
+    const response = await fetch(url);
     const results = await response.json();
     return results;
   }
 
-export const fetchfromAPI = async (target, section) => {
+export const fetchfromAPI = async (target, section,url, from, many) => {
   
-  fetchResultsJSON().then((results) => {
+  fetchResultsJSON(url).then((results) => {
     console.log(results); // fetched movies
-    results.splice(9, 1);
+    results.splice(from, many);
     const total = spawnCards(results, target);
     valueUpdater(section, total);
-    updateLikes();
   });
 }
 
