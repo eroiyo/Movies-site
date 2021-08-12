@@ -1,4 +1,7 @@
-# Leader_board
+# Movies-site
+
+The is capstone project app.
+
 
 This app will allow the user to
 -To add his score to the Leader_Board.
