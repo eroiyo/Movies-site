@@ -1,4 +1,3 @@
-import { size } from 'lodash';
 import { postLike } from './likes';
 
 const spawnCard = (movie, target) => {
