@@ -18,9 +18,8 @@ const submitFunction = (dom) => {
       },
     })
 
-      .then((response) => response.json())
+      .then((response) => response.json());
     // eslint-disable-next-line no-console
-      .then((json) => console.log(json));
   };
 
   //   once the event listener is activated this code will be executed

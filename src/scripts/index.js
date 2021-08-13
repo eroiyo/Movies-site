@@ -56,9 +56,7 @@ const postComment = (itemId, userName, commentContent) => {
     },
   })
 
-    .then((response) => response.json())
-  // eslint-disable-next-line no-console
-    .then((json) => console.log(json));
+    .then((response) => response.json());
 };
 
 document.querySelector('.submit_button').addEventListener('click', () => {
