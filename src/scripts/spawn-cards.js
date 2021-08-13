@@ -53,7 +53,7 @@ const spawnCard = (movie, target) => {
   commentButton.type = 'button';
   commentButton.readOnly = true;
 
-  commentButton.addEventListener('click', () => { summonComment(cardTitle.textContent, movie, image, fetchComments) });
+  commentButton.addEventListener('click', () => { summonComment(cardTitle.textContent, movie, image, fetchComments); });
 
   likeContainer.appendChild(likes);
   likeContainer.appendChild(star);
