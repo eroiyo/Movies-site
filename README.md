@@ -48,7 +48,7 @@ if you wish to edit the code for the project to take effect.
 
 [Jtest Installation](https://www.howtoinstall.me/ubuntu/18-04/jstest-gtk/)
 
-### Live Link 
+### Project Video 
 
 [Live link](https://drive.google.com/file/d/1tDmLnECZqp1AxTJDGRUd_38L5tzc50Zl/view?usp=sharing)
 
