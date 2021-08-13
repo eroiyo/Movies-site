@@ -8,7 +8,6 @@ export const fetchResultsJSON = async (url) => {
 
 export const fetchfromAPI = async (target, section, url, from, many) => {
   fetchResultsJSON(url).then((results) => {
-    console.log(results); // fetched movies
     results.splice(from, many);
     const total = spawnCards(results, target);
     valueUpdater(section, total);
@@ -22,7 +21,7 @@ export const Appcreation = () => {
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 201) {
-      console.log(request.responseText);
+      // console.log(request.responseText);
     }
   };
   request.send();

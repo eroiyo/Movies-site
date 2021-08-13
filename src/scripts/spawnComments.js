@@ -7,6 +7,7 @@ export const spawnComments = (results) => { // fetched movies
     document.querySelector('.comments_number').textContent = 'Comments (0)';
   }
   const tr = document.createElement('tr');
+  tr.classList.add('header_line');
   const thName = document.createElement('th');
   const thTime = document.createElement('th');
   const thComment = document.createElement('th');
@@ -18,7 +19,7 @@ export const spawnComments = (results) => { // fetched movies
   tr.appendChild(thComment);
   table.appendChild(tr);
   document.querySelector('.comments_number').style.fontSize = 'x-large';
-  for (let i = 0; i < results.length; i += 1) {
+  for (let i = results.length - 1; i >= 0; i -= 1) {
     const tr = document.createElement('tr');
     const { username } = results[i];
     const date = results[i].creation_date;

@@ -56,15 +56,35 @@ const postComment = (itemId, userName, commentContent) => {
     },
   })
 
-    .then((response) => response.json())
-  // eslint-disable-next-line no-console
-    .then((json) => console.log(json));
+    .then((response) => response.json());
+};
+
+const appendComment = (username, date, comment) => {
+  // const table = document.querySelector('.comments_table');
+  const existingNode = document.querySelector('.header_line');
+  const tr = document.createElement('tr');
+  const contentDiv = document.createElement('td');
+  const userNameDiv = document.createElement('td');
+  const dateDiv = document.createElement('td');
+  userNameDiv.textContent = username;
+  dateDiv.textContent = date;
+  contentDiv.textContent = comment;
+  tr.appendChild(userNameDiv);
+  tr.appendChild(dateDiv);
+  tr.appendChild(contentDiv);
+  existingNode.parentNode.insertBefore(tr, existingNode.nextSibling);
 };
 
 document.querySelector('.submit_button').addEventListener('click', () => {
   const itemId = document.querySelector('.mname').textContent;
   const userName = document.querySelector('.your_name').value;
   const commentContent = document.querySelector('textarea').value;
+  const date = new Date();
+  const year = date.getYear() + 1900;
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const dateFormat = `${year} + '-' + ${month} + '-' + ${day}`;
+  appendComment(userName, dateFormat, commentContent);
   postComment(itemId, userName, commentContent);
   document.querySelector('.your_name').value = '';
   document.querySelector('textarea').value = '';

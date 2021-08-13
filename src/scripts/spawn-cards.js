@@ -10,7 +10,6 @@ const spawnCard = (movie, target) => {
       const results = await response.json();
       return results;
     }
-
     fetchResultsJSON().then((results) => { spawnComments(results); });
   };
   const card = document.createElement('div');
