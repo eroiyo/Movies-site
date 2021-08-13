@@ -29,8 +29,7 @@ document.querySelector('.close').addEventListener('click', () => {
     document.querySelector('.card-container-two').style.display = 'none';
     document.querySelector('.card-container').style.display = 'grid';
     document.querySelector('main').style.display = 'flex';
-  }
-  else {
+  } else {
     document.querySelector('.comments_container').style.display = 'none';
     document.querySelector('.card-container').style.display = 'none';
     document.querySelector('.card-container-two').style.display = 'grid';
@@ -38,7 +37,7 @@ document.querySelector('.close').addEventListener('click', () => {
   }
 });
 
-const postComment = (itemId,userName,commentContent) => {
+const postComment = (itemId, userName, commentContent) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Q6FJ5Iv0xZsu9v3INtJx/comments', {
 
     // Adding method type
@@ -72,7 +71,6 @@ document.querySelector('.submit_button').addEventListener('click', () => {
   // eslint-disable-next-line no-restricted-globals
   event.preventDefault();
 });
-
 
 document.querySelector('.comedy').addEventListener('click', () => {
   document.querySelector('.comments_container').style.display = 'none';
