@@ -3,3 +3,4 @@
  .stylelintrc.json
 /coverage
  
+coverage/*
