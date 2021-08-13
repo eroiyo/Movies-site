@@ -1,4 +1,5 @@
 import { postLike } from './likes';
+import { spawnComments, summonComment } from './spawnComments';
 
 const spawnCard = (movie, target) => {
   const fetchComments = (itemId) => { // the curly brace opens a multiline function
@@ -10,43 +11,7 @@ const spawnCard = (movie, target) => {
       return results;
     }
 
-    fetchResultsJSON().then((results) => { // fetched movies
-      const table = document.querySelector('.comments_table');
-      while (table.firstChild) table.removeChild(table.firstChild);
-      if (results.length > 0) {
-        document.querySelector('.comments_number').textContent = `Comments (${results.length})`;
-      } else {
-        document.querySelector('.comments_number').textContent = 'Comments (0)';
-      }
-      const tr = document.createElement('tr');
-      const thName = document.createElement('th');
-      const thTime = document.createElement('th');
-      const thComment = document.createElement('th');
-      thName.textContent = 'usernamne';
-      thTime.textContent = 'time';
-      thComment.textContent = 'comment';
-      tr.appendChild(thName);
-      tr.appendChild(thTime);
-      tr.appendChild(thComment);
-      table.appendChild(tr);
-      document.querySelector('.comments_number').style.fontSize = 'x-large';
-      for (let i = 0; i < results.length; i += 1) {
-        const tr = document.createElement('tr');
-        const { username } = results[i];
-        const date = results[i].creation_date;
-        const content = results[i].comment;
-        const userNameDiv = document.createElement('td');
-        const dateDiv = document.createElement('td');
-        const contentDiv = document.createElement('td');
-        userNameDiv.textContent = username;
-        dateDiv.textContent = date;
-        contentDiv.textContent = content;
-        tr.appendChild(userNameDiv);
-        tr.appendChild(dateDiv);
-        tr.appendChild(contentDiv);
-        table.appendChild(tr);
-      }
-    });
+    fetchResultsJSON().then((results) => {spawnComments(results);});
   };
   const card = document.createElement('div');
   card.classList.add('card');
@@ -88,17 +53,7 @@ const spawnCard = (movie, target) => {
   commentButton.type = 'button';
   commentButton.readOnly = true;
 
-  commentButton.addEventListener('click', () => {
-    document.querySelector('.card-container').style.display = 'none';
-    document.querySelector('.mname').textContent = cardTitle.textContent;
-    document.querySelector('.movie_cover').src = image.src;
-    document.querySelector('.summary_text').innerHTML = movie.show.summary;
-    document.querySelector('.comments_container').style.display = 'block';
-    document.querySelector('.card').style.display = 'block';
-    document.querySelector('main').style.display = 'none';
-    const itemId = cardTitle.textContent;
-    fetchComments(itemId);
-  });
+  commentButton.addEventListener('click',() =>{ summonComment(cardTitle.textContent, movie, image, fetchComments)});
 
   likeContainer.appendChild(likes);
   likeContainer.appendChild(star);
