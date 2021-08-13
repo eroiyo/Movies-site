@@ -19,6 +19,7 @@ const spawnCard = (movie, target) => {
         document.querySelector('.comments_number').textContent = 'Comments (0)';
       }
       const tr = document.createElement('tr');
+      tr.classList.add('header_line');
       const thName = document.createElement('th');
       const thTime = document.createElement('th');
       const thComment = document.createElement('th');
