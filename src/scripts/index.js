@@ -59,7 +59,6 @@ const postComment = (itemId, userName, commentContent) => {
     .then((response) => response.json());
 };
 
-
 const appendComment = (username, date, comment) => {
   // const table = document.querySelector('.comments_table');
   const existingNode = document.querySelector('.header_line');
@@ -84,7 +83,7 @@ document.querySelector('.submit_button').addEventListener('click', () => {
   const year = date.getYear() + 1900;
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  const dateFormat = year + '-' + month + '-' + day;
+  const dateFormat = `${year} + '-' + ${month} + '-' + ${day}`;
   appendComment(userName, dateFormat, commentContent);
   postComment(itemId, userName, commentContent);
   document.querySelector('.your_name').value = '';
