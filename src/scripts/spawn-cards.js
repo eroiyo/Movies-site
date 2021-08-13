@@ -1,4 +1,5 @@
 import { postLike } from './likes';
+import { spawnComments, summonComment } from './spawnComments';
 
 const spawnCard = (movie, target) => {
   const fetchComments = (itemId) => { // the curly brace opens a multiline function
@@ -9,42 +10,18 @@ const spawnCard = (movie, target) => {
       const results = await response.json();
       return results;
     }
-
-    fetchResultsJSON().then((results) => { // fetched movies
-      const commentsContent = document.querySelector('.comments_content');
-      while (commentsContent.firstChild) commentsContent.removeChild(commentsContent.firstChild);
-      if (results.length > 0) {
-        document.querySelector('.comments_number').textContent = `comments (${results.length})`;
-      } else {
-        document.querySelector('.comments_number').textContent = 'comments (0)';
-      }
-      for (let i = 0; i < results.length; i += 1) {
-        const commentDiv = document.createElement('div');
-        commentDiv.style.display = 'flex';
-        const { username } = results[i];
-        const date = results[i].creation_date;
-        const content = results[i].comment;
-        const userNameDiv = document.createElement('div');
-        userNameDiv.style.marginRight = '60px';
-        const dateDiv = document.createElement('div');
-        dateDiv.style.marginRight = '60px';
-        const contentDiv = document.createElement('div');
-        userNameDiv.textContent = username;
-        dateDiv.textContent = date;
-        contentDiv.textContent = content;
-        commentDiv.appendChild(userNameDiv);
-        commentDiv.appendChild(dateDiv);
-        commentDiv.appendChild(contentDiv);
-        commentsContent.appendChild(commentDiv);
-      }
-    });
+    fetchResultsJSON().then((results) => { spawnComments(results); });
   };
   const card = document.createElement('div');
   card.classList.add('card');
 
   const image = document.createElement('img');
   image.classList.add('card-image');
-  image.src = movie.show.image.medium;
+  if (movie.show.image !== null) {
+    image.src = movie.show.image.medium;
+  } else {
+    image.src = '../src/img/404.jpg';
+  }
 
   const cardTitle = document.createElement('h5');
   cardTitle.textContent = movie.show.name;
@@ -53,7 +30,7 @@ const spawnCard = (movie, target) => {
   likeContainer.classList.add('like-genre-container');
 
   const likes = document.createElement('h6');
-  likes.textContent = '';
+  likes.textContent = 'Likes: 0';
   likes.id = `like-${movie.show.name}`;
 
   const star = document.createElement('i');
@@ -75,17 +52,7 @@ const spawnCard = (movie, target) => {
   commentButton.type = 'button';
   commentButton.readOnly = true;
 
-  commentButton.addEventListener('click', () => {
-    document.querySelector('.card-container').style.display = 'none';
-    document.querySelector('.mname').textContent = cardTitle.textContent;
-    document.querySelector('.movie_cover').src = image.src;
-    document.querySelector('.summary_text').innerHTML = movie.show.summary;
-    document.querySelector('.comments_container').style.display = 'block';
-    document.querySelector('.card').style.display = 'block';
-    document.querySelector('main').style.display = 'none';
-    const itemId = cardTitle.textContent;
-    fetchComments(itemId);
-  });
+  commentButton.addEventListener('click', () => { summonComment(cardTitle.textContent, movie, image, fetchComments); });
 
   likeContainer.appendChild(likes);
   likeContainer.appendChild(star);

@@ -12,7 +12,9 @@ export const updateLikes = async () => {
   const array = await getLikes();
   array.forEach((likes) => {
     const target = document.getElementById(`like-${likes.item_id}`);
-    target.textContent = `Likes: ${likes.likes}`;
+    if (target !== null) {
+      target.textContent = `Likes: ${likes.likes}`;
+    }
   });
 };
 
