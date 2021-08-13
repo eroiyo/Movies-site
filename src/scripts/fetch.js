@@ -19,10 +19,5 @@ export const Appcreation = () => {
   const requestURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
   request.open('POST', requestURL, true);
   request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  request.onreadystatechange = () => {
-    if (request.readyState === 4 && request.status === 201) {
-      // console.log(request.responseText);
-    }
-  };
   request.send();
 };
